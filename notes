@@ -1,0 +1,72 @@
+"""elif codes == "lg":
+      print("Welcome back")
+      print("\n")
+      print("Input your login credentials below.") 
+      print("\n")
+      ent_username = input("Username..")
+      ent_password = input("Password..")
+      print("\n")
+
+   while ent_username != "Testing" or ent_password != "12345":
+      print("Invalid username or password.Try this Username = Testing and Password = 12345")
+      print("\n")
+      ent_username = input("Username..")
+      ent_password = input("Password..")
+      print("\n")
+
+   else:
+      print("Logged in successfully")""" 
+
+
+
+
+      class Credentials :
+
+    """
+    Creates new accounts Credentials of a user.
+    """
+
+    credentials_list = []
+
+    def __init__(self,init_account,account_username,account_password):
+
+        self.init_account = init_account
+        self.account_username = account_username
+        self.account_password = account_password
+
+    def save_account(self):
+
+        """
+        method to save account
+        """
+
+        Credentials.credentials_list.append(self)
+
+    def delete_password(self):
+
+        """
+        Method to delete password accounts
+        """
+
+    Credentials.credentials_list.remove(self)
+
+@classmethod
+def display_passwords(cls):
+
+        """
+        Method to display passwords saved
+        """
+
+        return cls.credentials_list
+
+
+@classmethod
+def search_passwords(cls, search_accounts):
+        
+        """
+        Method to search for saved passwords
+        """
+
+        for account in cls.credentials_list:
+            if account.init_account == search_accounts:
+                return account 
